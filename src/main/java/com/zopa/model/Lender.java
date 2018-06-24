@@ -1,4 +1,4 @@
-package com.zopa.lenders;
+package com.zopa.model;
 
 public class Lender {
 
@@ -22,5 +22,9 @@ public class Lender {
 
 	public double getAmount() {
 		return amount;
+	}
+
+	public String toString() {
+		return String.format("%s [%f; %f]", name, rate, amount);
 	}
 }
