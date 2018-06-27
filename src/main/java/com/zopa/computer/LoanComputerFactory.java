@@ -6,7 +6,7 @@ public class LoanComputerFactory {
 		LoanComputer computer;
 
 		switch (computerType) {
-			case FRENCH:
+			case FRENCH_FINANCIAL:
 				computer = new LoanComputerFrench();
 				break;
 			default:

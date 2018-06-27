@@ -28,7 +28,7 @@ public class ZopaMain {
 		Path csvMarketPath = Paths.get(marketPath);
 		MarketProvider marketProvider = MarketProviderFactory.getMarketProvider(csvMarketPath);
 
-		LoanComputer loanComputer = LoanComputerFactory.getLoanComputer(LoanComputerMethod.FRENCH);
+		LoanComputer loanComputer = LoanComputerFactory.getLoanComputer(LoanComputerMethod.FRENCH_FINANCIAL);
 		loanComputer.addLenders(marketProvider.getLenderList());
 		Loan loan = loanComputer.computeLoan(pv, months);
 
@@ -41,5 +41,25 @@ public class ZopaMain {
 			display("Total repayment: %s", formatDouble(loan.getTotalPayment(), 2, RoundingMode.DOWN));
 		}
 
+	}
+
+	public static void mainNew(String[] args) {
+
+	}
+
+	private static UserInput parseUserInput(String[] args) {
+		UserInput userInput = null;
+		// todo impl
+		return userInput;
+	}
+
+	private static class UserInput {
+		Path csvMarketPath;
+		int loanAmount;
+
+		UserInput(Path csvMarketPath, int loanAmount) {
+			this.csvMarketPath = csvMarketPath;
+			this.loanAmount = loanAmount;
+		}
 	}
 }
